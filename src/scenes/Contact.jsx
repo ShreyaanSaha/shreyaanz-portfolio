@@ -18,7 +18,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact py-48">
+    <section id="contact" className="contact py-24 md:py-48 px-4 md:px-8">
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
@@ -29,27 +29,24 @@ const Contact = () => {
           hidden: { opacity: 0, x: 50 },
           visible: { opacity: 1, x: 0 },
         }}
-        className="flex justify-end w-full"
+        className="flex justify-center md:justify-end w-full"
       >
-        <div>
+        <div className="text-center md:text-right">
           <p className="font-playfair font-semibold text-4xl">
             <span className="text-red">CONTACT ME</span> TO GET STARTED
           </p>
-          <div className="flex md:justify-end my-5">
+          <div className="flex justify-center md:justify-end my-5">
             <LineGradient width="w-1/2" />
           </div>
         </div>
       </motion.div>
 
       {/* FORM & IMAGE */}
-      <div className="md:flex md:justify-between gap-16 mt-5">
-        <div
-          className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10
-          before:w-full before:h-full before:border-2 before:border-blue before:z-[-1]"
-        >
+      <div className="md:flex md:justify-between md:gap-16 mt-5">
+        <div className="flex justify-center md:block relative z-0 md:ml-20 before:absolute before:-top-10 before:-left-10 before:w-full before:h-full before:border-2 before:border-blue before:z-[-1]">
           <img
-            alt="skills"
-            className="z-10"
+            alt="contact"
+            className="z-10 w-full md:w-auto max-w-xs md:max-w-none"
             src="https://res.cloudinary.com/deqvxfp7f/image/upload/v1708677384/Portfolio/contact-image_a6pfls.jpg"
           />
         </div>
@@ -63,7 +60,7 @@ const Contact = () => {
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
           }}
-          className="basis-1/2 mt-10 md:mt-0"
+          className="mt-10 md:mt-0 md:basis-1/2"
         >
           <form
             target="_blank"
