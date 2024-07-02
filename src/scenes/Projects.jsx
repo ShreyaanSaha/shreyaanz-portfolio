@@ -7,7 +7,7 @@ const Projects = () => {
     <section id="projects" className="pt-24 pb-24">
       {/* HEADINGS */}
       <motion.div
-        className="md:w-2/5 mx-auto text-center"
+        className="md:w-2/5 mx-auto text-center px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -36,14 +36,15 @@ const Projects = () => {
           <a
             href={project.link}
             key={project.image}
-            className="sm:w-1/2 w-100 p-4 rounded-md">
+            className="sm:w-1/2 w-full p-4 rounded-md"
+          >
             <div className="flex relative rounded-md">
               <img
                 alt="gallery"
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover object-center rounded-md"
                 src={project.image}
               />
-              <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+              <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100 rounded-md">
                 <h2 className="tracking-widest text-sm title-font font-medium text-blue mb-1">
                   {project.subtitle}
                 </h2>
