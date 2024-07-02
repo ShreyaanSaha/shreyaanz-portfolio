@@ -83,7 +83,7 @@ const Landing = ({ setSelectedPage }) => {
           </AnchorLink>
           <AnchorLink
             className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
-            onClick={() => { window.open('https://drive.google.com/file/d/1jbvCZqeiEO6oHIB-GR-nKwr8Ke-yFpou/view?usp=sharing', '_blank')}}
+            onClick={() => { window.open('https://drive.google.com/file/d/1QR6hhuHVOA7QP4zEWsDgsUvaj0XsRkQK/view?usp=sharing', '_blank')}}
             href="#contact"
           >
             <div className="bg-deep-blue hover:text-red transition duration-500 w-full h-full flex items-center justify-center px-10 font-playfair">
