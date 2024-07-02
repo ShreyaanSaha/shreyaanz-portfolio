@@ -1,42 +1,10 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
-
-const container = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const projectVariant = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1 },
-};
-
-const Project = ({ title }) => {
-  const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
-    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
-  const projectTitle = title.split(" ").join("-").toLowerCase();
-
-  return (
-    <motion.div variants={projectVariant} className="relative">
-      <div className={overlayStyles}>
-        <p className="text-2xl font-playfair">{title}</p>
-        <p className="mt-7">
-          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-          porttitor accumsan tincidunt.
-        </p>
-      </div>
-      <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
-    </motion.div>
-  );
-};
+import { projects } from "../data";
 
 const Projects = () => {
   return (
-    <section id="projects" className="pt-48 pb-48">
+    <section id="projects" className="pt-24 pb-24">
       {/* HEADINGS */}
       <motion.div
         className="md:w-2/5 mx-auto text-center"
@@ -58,46 +26,35 @@ const Projects = () => {
           </div>
         </div>
         <p className="mt-10 mb-10">
-          Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
-          fames odio in at. At magna ornare dictum lectus. Purus massa morbi
-          purus nec eget eleifend ut elit.
+          Welcome to the Projects section of my portfolio, where creativity meets functionality, and ideas come to life. Here, I present a curated collection of endeavors that reflect my passion for problem-solving and my commitment to delivering exceptional outcomes. Each project represents a journey, blending innovation with practicality, and serves as a testament to my skills and dedication.
         </p>
       </motion.div>
 
       {/* PROJECTS */}
-      <div className="flex justify-center">
-        <motion.div
-          className="sm:grid sm:grid-cols-3"
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {/* ROW 1 */}
-          <div
-            className="flex justify-center text-center items-center p-10 bg-red
-              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
-          >
-            BEAUTIFUL USER INTERFACES
-          </div>
-          <Project title="Project 1" />
-          <Project title="Project 2" />
-
-          {/* ROW 2 */}
-          <Project title="Project 3" />
-          <Project title="Project 4" />
-          <Project title="Project 5" />
-
-          {/* ROW 3 */}
-          <Project title="Project 6" />
-          <Project title="Project 7" />
-          <div
-            className="flex justify-center text-center items-center p-10 bg-blue
-              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
-          >
-            SMOOTH USER EXPERIENCE
-          </div>
-        </motion.div>
+      <div className="flex flex-wrap -m-4">
+        {projects.map((project) => (
+          <a
+            href={project.link}
+            key={project.image}
+            className="sm:w-1/2 w-100 p-4 rounded-md">
+            <div className="flex relative rounded-md">
+              <img
+                alt="gallery"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                src={project.image}
+              />
+              <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+                <h2 className="tracking-widest text-sm title-font font-medium text-blue mb-1">
+                  {project.subtitle}
+                </h2>
+                <h1 className="title-font text-lg font-medium text-red mb-3">
+                  {project.title}
+                </h1>
+                <p className="leading-relaxed">{project.description}</p>
+              </div>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   );
