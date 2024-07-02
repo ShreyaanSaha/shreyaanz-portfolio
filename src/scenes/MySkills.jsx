@@ -30,7 +30,7 @@ const MySkills = () => {
           </p>
         </motion.div>
 
-        <div className="mt-16 md:mt-0">
+        <div className="mt-16 md:mt-0 flex justify-center md:justify-start">
           {isAboveLarge ? (
             <div
               className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10
@@ -49,20 +49,18 @@ const MySkills = () => {
       </div>
 
       {/* SKILLS */}
-      <div name="experience" className= "justify-center w-full h-screen">
-        <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-ful text-white">
-            <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-8 text-center py-8 px-12 sm:px-0">
-                {
-                    skills.map(({ id, src, title, style }) => (
-                        <div key={id} className={`shadow-md hover:scale-110 duration-500 py-2 rounded-lg ${style}`}>
-                          <img src={src} alt={title} className="h-50 w-20 mx-auto" />
-                          <p className="mt-4">{title}</p>
-                        </div>
-                      ))
-                }
-            </div>
+      <div name="experience" className="justify-center w-full">
+        <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
+          <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 text-center py-8 px-4 sm:px-0">
+            {skills.map(({ id, src, title, style }) => (
+              <div key={id} className={`shadow-md hover:scale-110 duration-500 py-2 rounded-lg ${style}`}>
+                <img src={src} alt={title} className="h-20 w-20 mx-auto" />
+                <p className="mt-4">{title}</p>
+              </div>
+            ))}
+          </div>
         </div>
-    </div>
+      </div>
     </section>
   );
 };
