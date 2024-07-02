@@ -33,7 +33,7 @@ const Contact = () => {
       >
         <div>
           <p className="font-playfair font-semibold text-4xl">
-            <span className="text-yellow">CONTACT ME</span> TO GET STARTED
+            <span className="text-red">CONTACT ME</span> TO GET STARTED
           </p>
           <div className="flex md:justify-end my-5">
             <LineGradient width="w-1/2" />
@@ -43,19 +43,16 @@ const Contact = () => {
 
       {/* FORM & IMAGE */}
       <div className="md:flex md:justify-between gap-16 mt-5">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          className="basis-1/2 flex justify-center"
+        <div
+          className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10
+          before:w-full before:h-full before:border-2 before:border-blue before:z-[-1]"
         >
-          <img src="../assets/contact-image.jpeg" alt="contact" />
-        </motion.div>
+          <img
+            alt="skills"
+            className="z-10"
+            src="https://res.cloudinary.com/deqvxfp7f/image/upload/v1708677384/Portfolio/contact-image_a6pfls.jpg"
+          />
+        </div>
 
         <motion.div
           initial="hidden"
@@ -71,11 +68,12 @@ const Contact = () => {
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
+            action="https://formsubmit.co/shreyaan.saha.1009@gmail.com"
             method="POST"
           >
             <input
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3"
+              name="name"
+              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 rounded"
               type="text"
               placeholder="NAME"
               {...register("name", {
@@ -91,7 +89,8 @@ const Contact = () => {
             )}
 
             <input
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
+              name="email"
+              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5 rounded"
               type="text"
               placeholder="EMAIL"
               {...register("email", {
@@ -107,7 +106,7 @@ const Contact = () => {
             )}
 
             <textarea
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
+              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5 rounded"
               name="message"
               placeholder="MESSAGE"
               rows="4"
@@ -127,7 +126,7 @@ const Contact = () => {
             )}
 
             <button
-              className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
+              className="p-5 bg-red font-semibold text-deep-blue mt-5 hover:bg-deep-red hover:text-white transition duration-500 rounded"
               type="submit"
             >
               SEND ME A MESSAGE
