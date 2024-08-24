@@ -44,9 +44,5 @@ const SocialMediaIcons = () => {
     </div>
   );
 };
-<<<<<<< HEAD
 
 export default SocialMediaIcons;
-=======
-export default SocialMediaIcons;
->>>>>>> 14a432db324059346430f3827acc3abacdcbee97
